@@ -10,5 +10,9 @@
   "license": "UNLICENSED",
   "devDependencies": {
     "typescript": "^2.6.1"
+  },
+  "peerDependencies": {
+    "react": "^16.1.0",
+    "react-dom": "^16.1.0"
   }
 }
