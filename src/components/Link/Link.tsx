@@ -1,19 +1,24 @@
 import * as React from 'react';
+import { StatelessComponent } from 'react';
+import * as PropTypes from 'prop-types';
 
-export interface LinkPropTypes {
+export interface LinkProps {
   href?: string;
   className?: string;
-  text: string;
 }
 
-const Link = (props: LinkPropTypes) => {
-  const {
-    text,
-    href = '#'
-  } = props;
-  return (
-    <a href={href}>{text}</a>
-  );
+const Link: StatelessComponent<LinkProps> = ({ href, children }) => (
+  <a href={href}>
+    {children}
+  </a>
+);
+
+Link.propTypes = {
+  href: PropTypes.string,
+};
+
+Link.defaultProps = {
+  // nothing here
 };
 
 export default Link;
