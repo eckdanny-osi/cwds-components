@@ -4,11 +4,15 @@
   "description": "React components for CWDS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:ts": "tsc --project src"
   },
   "author": "Danny Eck <danny.eck@osi.ca.gov>",
   "license": "UNLICENSED",
   "devDependencies": {
+    "@types/prop-types": "^15.5.2",
+    "@types/react": "^16.0.22",
+    "prop-types": "^15.6.0",
     "typescript": "^2.6.1"
   },
   "peerDependencies": {
