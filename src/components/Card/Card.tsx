@@ -3,8 +3,16 @@ import { StatelessComponent } from 'react';
 import * as PropTypes from 'prop-types';
 
 export interface CardProps {
-  cardHeaderText: string;
+  cardHeaderText?: string;
 }
+
+const propTypes = {
+  cardHeaderText: PropTypes.string,
+};
+
+const defaultProps = {
+  // nothing here
+};
 
 const Card: StatelessComponent<CardProps> = ({ cardHeaderText, children }) => (
   <div className="bg-lightest-grey container">
@@ -20,12 +28,7 @@ const Card: StatelessComponent<CardProps> = ({ cardHeaderText, children }) => (
   </div>
 );
 
-Card.propTypes = {
-  cardHeaderText: PropTypes.string,
-};
-
-Card.defaultProps = {
-  // nothing here
-};
+Card.propTypes = propTypes;
+Card.defaultProps = defaultProps;
 
 export default Card;

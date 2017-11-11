@@ -8,6 +8,15 @@ export interface LinkProps {
   className?: string;
 }
 
+const propTypes = {
+  href: PropTypes.string,
+  className: PropTypes.string,
+};
+
+const defaultProps = {
+  // nothing here
+};
+
 const Link: StatelessComponent<LinkProps> = ({ href, children, className }) => (
   <a
     href={href}
@@ -17,13 +26,7 @@ const Link: StatelessComponent<LinkProps> = ({ href, children, className }) => (
   </a>
 );
 
-Link.propTypes = {
-  href: PropTypes.string,
-  className: PropTypes.string,
-};
-
-Link.defaultProps = {
-  // nothing here
-};
+Link.propTypes = propTypes;
+Link.defaultProps = defaultProps;
 
 export default Link;
