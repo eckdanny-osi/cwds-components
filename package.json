@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf dist",
-    "build:ts": "tsc --project src"
+    "build:ts": "tsc --project src",
+    "start": "tsc --project src --watch"
   },
   "author": "Danny Eck <danny.eck@osi.ca.gov>",
   "license": "UNLICENSED",
