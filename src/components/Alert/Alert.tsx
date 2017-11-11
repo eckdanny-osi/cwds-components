@@ -1,31 +1,35 @@
 import * as React from 'react';
 import { StatelessComponent } from 'react';
-import { CONTEXT, CONTEXTS } from './types'
+import * as classnames from 'classnames';
+import { ALERT_TYPE, ALERT_TYPES } from './types'
 import * as PropTypes from 'prop-types';
 
 export interface AlertProps {
-  context: CONTEXT;
+  type: ALERT_TYPE;
   dismissible: boolean;
   onDismiss: Function;
 }
 
 const propTypes = {
-  context: PropTypes.oneOf(CONTEXTS).isRequired,
+  type: PropTypes.oneOf(ALERT_TYPES).isRequired,
   dismissible: PropTypes.bool,
   onDismiss: PropTypes.func,
 };
 
 const defaultProps = {
-  context: CONTEXT.INFO,
+  type: ALERT_TYPE.INFO,
 };
 
 const Alert: StatelessComponent<AlertProps> = ({
-  context,
+  type,
   dismissible,
   onDismiss,
-  children
+  children,
 }) => (
-  <div className="alert">
+  <div
+    className={classnames('alert')}
+    role='alert'
+  >
     {children}
   </div>
 );
