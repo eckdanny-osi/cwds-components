@@ -14,17 +14,12 @@ const defaultProps = {
   // nothing here
 };
 
-const Card: StatelessComponent<CardProps> = ({ cardHeaderText, children }) => (
-  <div className="bg-lightest-grey container">
-    <div className="card edit double-gap-top">
-      <div className="card-header">
-        <span>{cardHeaderText}</span>
-      </div>
-      <div className="card-body">
-        {children}
-        <div className="clearfix" />
-      </div>
-    </div>
+const Card: StatelessComponent<CardProps> = ({
+  cardHeaderText,
+  children
+}) => (
+  <div className="card">
+    {children}
   </div>
 );
 

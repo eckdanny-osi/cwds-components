@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Card from '../Card';
 import { StatelessComponent } from 'react';
 import * as classnames from 'classnames';
 import { ALERT_TYPE, ALERT_TYPES } from './types'
@@ -27,7 +28,10 @@ const Alert: StatelessComponent<AlertProps> = ({
   children,
 }) => (
   <div
-    className={classnames('alert')}
+    className={classnames(
+      'alert',
+      `alert-${type}`
+    )}
     role='alert'
   >
     {children}

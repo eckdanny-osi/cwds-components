@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf dist",
     "build:ts": "tsc --project src",
+    "build:css": "node-sass --recursive --output dist --source-map true --source-map-contents --include-path node_modules/bootstrap src",
     "start": "tsc --project src --watch"
   },
   "author": "Danny Eck <danny.eck@osi.ca.gov>",
@@ -15,7 +16,9 @@
     "@types/classnames": "^2.2.3",
     "@types/prop-types": "^15.5.2",
     "@types/react": "^16.0.22",
+    "bootstrap": "4.0.0-beta.2",
     "font-awesome": "^4.7.0",
+    "node-sass": "^4.6.1",
     "prop-types": "^15.6.0",
     "rimraf": "^2.6.2",
     "typescript": "^2.6.1",
