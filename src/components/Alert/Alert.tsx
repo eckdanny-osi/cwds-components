@@ -2,7 +2,7 @@ import * as React from 'react';
 import Card from '../Card';
 import { StatelessComponent } from 'react';
 import * as classnames from 'classnames';
-import { ALERT_TYPE, ALERT_TYPES } from './types'
+import { ALERT_TYPE, ALERT_TYPES } from './AlertTypes';
 import * as PropTypes from 'prop-types';
 
 export interface AlertProps {

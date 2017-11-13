@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "React components for CWDS",
   "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf dist",
     "build:ts": "tsc --project src",
-    "build:css": "node-sass --recursive --output dist --source-map true --source-map-contents --include-path node_modules/bootstrap src",
+    "build:css": "node-sass --output dist --source-map true --source-map-contents --include-path node_modules/bootstrap src/style.scss",
     "start": "tsc --project src --watch"
   },
   "author": "Danny Eck <danny.eck@osi.ca.gov>",
