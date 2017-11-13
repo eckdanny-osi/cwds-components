@@ -26,7 +26,7 @@
 }
 .alert-body {
   background-color: white;
-  padding: $alert-padding-y $alert-padding-x/2;
+  padding: $alert-padding-y $alert-padding-x;
   border: $alert-border-width solid $border-color;
   border-left: none;
   flex: 1;
@@ -79,7 +79,7 @@
     @include alert-variant(
       theme-color-level($color, 0),
       $border-color,
-      $white, // theme-color-level($color, 6)
+      $white
     );
   }
 }
