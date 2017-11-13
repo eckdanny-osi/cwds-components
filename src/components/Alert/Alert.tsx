@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Card from '../Card';
-import { StatelessComponent } from 'react';
 import * as classnames from 'classnames';
 import { ALERT_TYPE, ALERT_TYPES } from './AlertTypes';
 import * as PropTypes from 'prop-types';
@@ -16,9 +15,7 @@ const type2iconName = {
   light: '',
   dark: '',
 };
-const getIcon = (type: ALERT_TYPE): React.ReactNode => {
-  return <Icon name={type2iconName[type]} />
-}
+const getIcon = (type: ALERT_TYPE, ...attrs: any[]): React.ReactElement<Icon> => <Icon {...attrs} name={type2iconName[type]} />;
 
 export interface AlertProps {
   type: ALERT_TYPE;
@@ -36,7 +33,7 @@ const defaultProps = {
   type: ALERT_TYPE.INFO,
 };
 
-const Alert: StatelessComponent<AlertProps> = ({
+const Alert: React.SFC<AlertProps> = ({
   type,
   dismissible,
   onDismiss,
@@ -50,7 +47,7 @@ const Alert: StatelessComponent<AlertProps> = ({
     role='alert'
   >
     <div className="alert-icon">
-      {getIcon(type)}
+      <Icon name={type2iconName[type]} />
     </div>
     <div className='alert-body'>
       {children}

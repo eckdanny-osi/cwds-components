@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { StatelessComponent } from 'react';
 import * as PropTypes from 'prop-types';
 import * as classnames from 'classnames';
 
@@ -17,7 +16,7 @@ const defaultProps = {
   // nothing here
 };
 
-const Link: StatelessComponent<LinkProps> = ({ href, children, className }) => (
+const Link: React.SFC<LinkProps> = ({ href, children, className }) => (
   <a
     href={href}
     className={classnames('cwds-link', className)}

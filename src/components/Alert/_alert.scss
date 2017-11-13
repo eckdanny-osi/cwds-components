@@ -4,10 +4,32 @@
 
 .alert {
   position: relative;
-  padding: $alert-padding-y $alert-padding-x;
+  // padding: $alert-padding-y $alert-padding-x;
   margin-bottom: $alert-margin-bottom;
   border: $alert-border-width solid transparent;
   // @include border-radius($alert-border-radius);
+  display: flex;
+  align-items: stretch;
+}
+.alert-icon {
+  width: 40px;
+  // background-color: red;
+  color: white;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & span {
+    max-width: 80%;
+    overflow: hidden
+  }
+}
+.alert-body {
+  background-color: white;
+  padding: $alert-padding-y $alert-padding-x/2;
+  border: $alert-border-width solid $border-color;
+  border-left: none;
+  flex: 1;
 }
 
 // // Headings for larger alerts
@@ -42,12 +64,22 @@
 // //
 // // Generate contextual modifier classes for colorizing the alert.
 
+// @each $color, $value in $theme-colors {
+//   .alert-#{$color} {
+//     @include alert-variant(
+//       theme-color-level($color, -10),
+//       theme-color-level($color, -9),
+//       theme-color-level($color, 6)
+//     );
+//   }
+// }
+
 @each $color, $value in $theme-colors {
-  .alert-#{$color} {
+  .alert-#{$color} .alert-icon {
     @include alert-variant(
-      theme-color-level($color, -10),
-      theme-color-level($color, -9),
-      theme-color-level($color, 6)
+      theme-color-level($color, 0),
+      $border-color,
+      $white, // theme-color-level($color, 6)
     );
   }
 }
