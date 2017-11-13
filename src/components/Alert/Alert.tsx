@@ -4,6 +4,21 @@ import { StatelessComponent } from 'react';
 import * as classnames from 'classnames';
 import { ALERT_TYPE, ALERT_TYPES } from './AlertTypes';
 import * as PropTypes from 'prop-types';
+import * as Icon from 'react-fontawesome';
+
+const type2iconName = {
+  primary: 'rocket',
+  secondary: '',
+  success: 'check-circle',
+  info: 'info-circle',
+  warning: 'warning',
+  danger: 'warning',
+  light: '',
+  dark: '',
+};
+const getIcon = (type: ALERT_TYPE): React.ReactNode => {
+  return <Icon name={type2iconName[type]} />
+}
 
 export interface AlertProps {
   type: ALERT_TYPE;
@@ -34,7 +49,12 @@ const Alert: StatelessComponent<AlertProps> = ({
     )}
     role='alert'
   >
-    {children}
+    <div className="alert-icon">
+      {getIcon(type)}
+    </div>
+    <div className='alert-body'>
+      {children}
+    </div>
   </div>
 );
 
