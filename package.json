@@ -7,11 +7,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf dist",
+    "build:copy": "mkdir -p dist && cp -R node_modules/font-awesome/fonts dist/fonts",
     "build:ts": "tsc --project src",
     "watch:ts": "npm run build:ts -- --watch",
     "build:css": "node-sass --output dist --source-map true --source-map-contents --include-path node_modules src",
     "watch:css": "npm run build:css && npm run build:css -- --watch --recursive",
-    "start": "npm-run-all clean --parallel watch:*"
+    "start": "npm-run-all clean build:copy --parallel watch:*"
   },
   "author": "Danny Eck <danny.eck@osi.ca.gov>",
   "license": "UNLICENSED",
@@ -21,7 +22,7 @@
     "@types/react": "^16.0.22",
     "bootstrap": "4.0.0-beta.2",
     "font-awesome": "^4.7.0",
-    "node-sass": "^4.6.1",
+    "node-sass": "4.5.3",
     "npm-run-all": "^4.1.2",
     "prop-types": "^15.6.0",
     "rimraf": "^2.6.2",
