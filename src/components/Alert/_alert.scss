@@ -40,20 +40,21 @@
 // }
 
 
-// // Dismissible alerts
-// //
-// // Expand the right padding and account for the close button's positioning.
+// Dismissible alerts
+//
+// Expand the right padding and account for the close button's positioning.
 
-// .alert-dismissible {
-//   // Adjust close link position
-//   .close {
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-//     padding: $alert-padding-y $alert-padding-x;
-//     color: inherit;
-//   }
-// }
+.alert-dismissible {
+  // Adjust close link position
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: $alert-padding-y $alert-padding-x;
+    padding: 10px 15px;
+    color: inherit;
+  }
+}
 
 
 // // Alternate styles

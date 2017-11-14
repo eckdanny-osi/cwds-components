@@ -4,6 +4,7 @@ import * as classnames from 'classnames';
 import { ALERT_TYPE, ALERT_TYPES } from './AlertTypes';
 import * as PropTypes from 'prop-types';
 import * as Icon from 'react-fontawesome';
+import Dismiss from '../Dismiss';
 
 const type2iconName = {
   primary: 'rocket',
@@ -42,7 +43,8 @@ const Alert: React.SFC<AlertProps> = ({
   <div
     className={classnames(
       'alert',
-      `alert-${type}`
+      `alert-${type}`,
+      onDismiss && 'alert-dismissible'
     )}
     role='alert'
   >
@@ -50,6 +52,12 @@ const Alert: React.SFC<AlertProps> = ({
       <Icon name={type2iconName[type]} />
     </div>
     <div className='alert-body'>
+      {onDismiss && (
+        <Dismiss
+          onDismiss={onDismiss}
+          label={'closeLabel'}
+        />
+      )}
       {children}
     </div>
   </div>

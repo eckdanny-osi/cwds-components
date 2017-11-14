@@ -22,7 +22,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  type: 'primary'
+  type: 'secondary'
 };
 
 const Badge: React.SFC<BadgeProps> = ({ type, children }) => (
