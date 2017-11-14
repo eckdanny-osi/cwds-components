@@ -1,7 +1,6 @@
 import * as React from 'react';
 import * as classnames from 'classnames';
 import * as PropTypes from 'prop-types';
-import { Children } from 'react';
 
 export interface ButtonProps {
   type: string;
