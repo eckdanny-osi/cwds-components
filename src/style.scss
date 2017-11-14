@@ -21,6 +21,8 @@ $fa-font-path: "./fonts" !default;
 @import "./Nav/nav";
 @import "./Avatar/avatar";
 
+@import "bootstrap/scss/list-group";
+
 @font-face{
   unicode-range: U+0-10ffff;
   font-family: 'Source Sans Pro';
