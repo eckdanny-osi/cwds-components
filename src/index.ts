@@ -8,3 +8,8 @@ export { default as Row } from './components/Row';
 export { default as Button } from './components/Button';
 export { default as Badge } from './components/Badge';
 export { default as Dismiss } from './components/Dismiss';
+export { default as Nav } from './components/Nav';
+export { default as NavItem } from './components/NavItem';
+export { default as NavLink } from './components/NavLink';
+export { default as Header } from './components/Header';
+export { default as NavBar } from './components/NavBar';
