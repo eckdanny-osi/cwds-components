@@ -4,7 +4,7 @@ import * as classnames from 'classnames';
 import * as PropTypes from 'prop-types';
 
 export interface ContainerProps {
-  tag?: string;
+  tag?: any;
   fluid?: boolean;
   className?: string;
 }
