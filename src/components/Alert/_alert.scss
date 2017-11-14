@@ -56,7 +56,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    padding: $alert-padding-y $alert-padding-x;
+    //padding: $alert-padding-y $alert-padding-x;  // FIXME
     padding: 10px 15px;
     color: inherit;
   }

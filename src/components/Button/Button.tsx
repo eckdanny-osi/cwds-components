@@ -5,6 +5,7 @@ import { Children } from 'react';
 
 export interface ButtonProps {
   type: string;
+  size?: string;
 }
 
 const propTypes = {
@@ -18,19 +19,21 @@ const propTypes = {
     'light',
     'dark',
     'link',
-  ])
+  ]),
+  size: PropTypes.oneOf(['sm', 'lg']),
 };
 
 const defaultProps = {
   type: 'primary'
 };
 
-const Button: React.SFC<ButtonProps> = ({ type, children }) => (
+const Button: React.SFC<ButtonProps> = ({ type, size, children }) => (
   <button
     type="button"
     className={classnames([
       'btn',
-      `btn-${type}`
+      `btn-${type}`,
+      size && `btn-${size}`
     ])}
   >
     {children}
