@@ -15,6 +15,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  @include border-radius($alert-border-radius);
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
   & span {
     max-width: 80%;
     overflow: hidden
@@ -24,6 +27,9 @@
   background-color: white;
   padding: $alert-padding-y $alert-padding-x;
   border: $alert-border-width solid $border-color;
+  @include border-radius($alert-border-radius);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
   border-left: none;
   flex: 1;
 }
