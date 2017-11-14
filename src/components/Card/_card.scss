@@ -81,6 +81,9 @@
   // background-color: $card-cap-bg;
   border-bottom: $card-border-width solid $card-border-color;
 
+  margin-left: -1px;
+  margin-right: -1px;
+
   &:first-child {
     @include border-radius($card-inner-border-radius $card-inner-border-radius 0 0);
   }
