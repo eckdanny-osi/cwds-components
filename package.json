@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "mkdir -p dist && rimraf dist/* && rimraf dist/.*}",
     "build:copy:pkgjson": "cp package.json dist",
-    "build:copy:fonts": "cp -R node_modules/font-awesome/fonts dist/fonts",
+    "build:copy:fonts": "cp -R fonts dist/fonts",
     "build:ts": "tsc --project src",
     "watch:ts": "npm run build:ts -- --watch",
     "build:css": "node-sass --output dist --source-map true --source-map-contents --include-path node_modules src",
