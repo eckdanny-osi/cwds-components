@@ -2,17 +2,17 @@
   "name": "cwds-components",
   "version": "1.0.0",
   "description": "React components for CWDS",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./index.js",
+  "types": "./index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf dist",
-    "build:copy": "mkdir -p dist && cp -R node_modules/font-awesome/fonts dist/fonts",
+    "build:copy": "mkdir -p fonts && cp -R node_modules/font-awesome/fonts/* fonts",
     "build:ts": "tsc --project src",
     "watch:ts": "npm run build:ts -- --watch",
-    "build:css": "node-sass --output dist --source-map true --source-map-contents --include-path node_modules src",
+    "build:css": "node-sass --output ./ --source-map true --source-map-contents --include-path node_modules src",
     "watch:css": "npm run build:css && npm run build:css -- --watch --recursive",
-    "start": "npm-run-all clean build:copy --parallel watch:*"
+    "start": "npm-run-all build:copy --parallel watch:*"
   },
   "author": "Danny Eck <danny.eck@osi.ca.gov>",
   "license": "UNLICENSED",

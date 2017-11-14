@@ -12,12 +12,12 @@ $fa-font-path: "./fonts" !default;
 @import "bootstrap/scss/bootstrap-grid";
 
 // @import "bootstrap/scss/mixins/alert";
-@import "./components/Alert/alert";
-@import "./components/Button/button";
-@import "./components/Badge/badge";
-@import "./components/Dismiss/dismiss";
+@import "./Alert/alert";
+@import "./Button/button";
+@import "./Badge/badge";
+@import "./Dismiss/dismiss";
 // @import "bootstrap/scss/_alert.scss";
-@import "./components/Card/card";
-@import "./components/Nav/nav";
+@import "./Card/card";
+@import "./Nav/nav";
 
 @import "bootstrap/scss/utilities";
