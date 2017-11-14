@@ -32,7 +32,8 @@ const Col: StatelessComponent<ColProps> = ({
 }) => (
   <Tag
     className={classnames(
-      'col'
+      'col',
+      className
     )}
     {...attrs}
   />
