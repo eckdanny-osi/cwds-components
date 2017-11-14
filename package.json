@@ -12,7 +12,7 @@
     "watch:ts": "npm run build:ts -- --watch",
     "build:css": "node-sass --output ./ --source-map true --source-map-contents --include-path node_modules src",
     "watch:css": "npm run build:css && npm run build:css -- --watch --recursive",
-    "start": "npm-run-all build:copy --parallel watch:*"
+    "start": "npm-run-all --parallel watch:*"
   },
   "author": "Danny Eck <danny.eck@osi.ca.gov>",
   "license": "UNLICENSED",
@@ -20,6 +20,7 @@
     "@types/classnames": "^2.2.3",
     "@types/prop-types": "^15.5.2",
     "@types/react": "^16.0.22",
+    "@types/react-fontawesome": "^1.6.1",
     "bootstrap": "4.0.0-beta.2",
     "font-awesome": "^4.7.0",
     "node-sass": "4.5.3",
@@ -34,8 +35,8 @@
     "react-dom": "^16.1.0"
   },
   "dependencies": {
-    "@types/react-fontawesome": "^1.6.1",
     "classnames": "^2.2.5",
-    "react-fontawesome": "^1.6.1"
+    "react-fontawesome": "^1.6.1",
+    "source-sans-pro": "git://github.com/adobe-fonts/source-sans-pro.git#release"
   }
 }
