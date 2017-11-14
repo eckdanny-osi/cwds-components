@@ -10,7 +10,7 @@ const propTypes = { };
 const defaultProps = { };
 
 const Header: React.SFC<HeaderProps> = () => (
-  <div style={{backgroundColor: "cyan", overflow: "auto"}}>
+  <div className="page-header">
     <Container><h1>KitchenSink</h1></Container>
   </div>
 );
