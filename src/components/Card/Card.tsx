@@ -1,26 +1,45 @@
 import * as React from 'react';
-import { StatelessComponent } from 'react';
 import * as PropTypes from 'prop-types';
+import * as classNames from 'classnames';
 
 export interface CardProps {
-  cardHeaderText?: string;
+  tag: any; // TODO: string | Function;
+  inverse: boolean;
+  color: string;
+  body: boolean;
+  outline: boolean;
+  className: string;
 }
 
 const propTypes = {
-  cardHeaderText: PropTypes.string,
+  tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+  inverse: PropTypes.bool,
+  color: PropTypes.string,
+  body: PropTypes.bool,
+  outline: PropTypes.bool,
+  className: PropTypes.string,
+  cssModule: PropTypes.object,
 };
 
 const defaultProps = {
-  // nothing here
+  tag: 'div'
 };
 
-const Card: StatelessComponent<CardProps> = ({
-  cardHeaderText,
-  children
+const Card: React.SFC<CardProps> = ({
+  className,
+  color,
+  body,
+  inverse,
+  outline,
+  tag: Tag,
+  ...attrs
 }) => (
-  <div className="card">
-    {children}
-  </div>
+  <Tag {...attrs} className={classNames(
+    className,
+    'card',
+    inverse ? 'text-white' : false,
+    color ? `${outline ? 'border' : 'bg'}-${color}` : false
+  )} />
 );
 
 Card.propTypes = propTypes;

@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 
 export interface DismissProps {
   label: string;
-  onDismiss: any;
+  onDismiss: any; // TODO function
 }
 
 const propTypes = {
