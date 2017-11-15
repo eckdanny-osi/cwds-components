@@ -10,7 +10,7 @@ const propTypes = { };
 const defaultProps = { };
 
 const NavBar: React.SFC<NavBarProps> = () => (
-  <div style={{backgroundColor: "blue", overflow: "auto"}}>
+  <div className="navbar">
     <Container><h1>NavBar</h1></Container>
   </div>
 );
