@@ -305,3 +305,23 @@ $card-deck-margin:                  $card-group-margin !default;
 $card-columns-count:                3 !default;
 $card-columns-gap:                  1.25rem !default;
 $card-columns-margin:               $card-spacer-y !default;
+
+
+// Userland Components
+//
+//
+
+// Avatar
+
+$avatar-size-sm:            15px;
+$avatar-size-md:            25px;
+$avatar-size-lg:            50px;
+
+$avatar-padding-y:         .375rem !default;
+$avatar-padding-x:         .75rem !default;
+
+$avatar-padding-y-sm:      .25rem !default;
+$avatar-padding-x-sm:      .5rem !default;
+
+$avatar-padding-y-lg:      .5rem !default;
+$avatar-padding-x-lg:      1rem !default;
