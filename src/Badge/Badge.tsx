@@ -6,7 +6,7 @@ import { Children } from 'react';
 export interface BadgeProps {
   color?: string;
   pill?: boolean;
-  tag?: string | React.ComponentType;
+  tag?: string;
   href?: string;
   className?: string;
 }

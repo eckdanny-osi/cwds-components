@@ -1,68 +1,70 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import * as classNames from 'classnames';
-import Card from '../Card';
-import Button from '../Button';
-import { Children } from 'react';
+import { Button, Card, CardHeader, CardBody, CardFooter } from '../';
 
 export interface CardEditProps { }
 export interface CardEditState {
-  mode: 'view' | 'edit';
+  mode: 'read' | 'edit';
 }
-
-interface ICardEditHeader {
-  mode?: 'view' | 'edit';
-  onClick?: Function;
-}
-
-const CardEditHeader: React.SFC<ICardEditHeader> = ({
-  mode,
-  onClick,
-}) => (
-  <div className="card-actions">
-    <Button
-      className="pull-right"
-      type="link"
-      onClick={()=>{alert('hi')}}
-      size="sm"
-      disabled={'edit' === mode}
-    >
-      Edit
-    </Button>
-  </div>
-);
-
-CardEditHeader.defaultProps = {
-  mode: 'view',
-};
-
-const CardEditFooter: React.SFC = () => (
-  <div className="card-actions">
-    <Button type="link" size="sm">Cancel</Button>
-    <Button type="primary" size="sm">Save</Button>
-  </div>
-);
 
 class CardEdit extends React.Component<CardEditProps, CardEditState> {
-
-  constructor(props: CardEditProps) {
-    super(props);
-    this.setState({
-      mode: 'view'
-    });
-  }
 
   static propTypes = {};
 
   static defaultProps = {};
 
+  handleSave = () => {
+    this.setState({ mode: 'read' });
+  };
+
+  handleCancel = () => {
+    this.setState({ mode: 'read' });
+  };
+
+  constructor(props: CardEditProps) {
+    super(props);
+    this.state = {
+      mode: 'read'
+    };
+  }
+
   render() {
     return (
-      <Card
-        header={<CardEditHeader mode={this.state.mode} />}
-        footer={<CardEditFooter />}
-      >
-        {this.props.children}
+      <Card>
+        <CardHeader>
+          <h3
+            className="mb-0"
+            style={{display: "inline-block"}}
+            >Title of the Card</h3>
+          {'edit' !== this.state.mode && (
+          <div className="card-actions">
+            <Button
+              type="secondary"
+              size="sm"
+              onClick={() => this.setState({ mode: 'edit' })}
+              >Edit</Button>
+          </div>
+          )}
+        </CardHeader>
+        <CardBody>{this.props.children}</CardBody>
+        <CardFooter>
+          {'edit' === this.state.mode && (
+          <div className="card-actions">
+            <Button
+              type="secondary"
+              size="sm"
+              onClick={this.handleCancel}
+              >Cancel</Button>
+            {' '}
+            <Button
+              type="primary"
+              size="sm"
+              onClick={this.handleSave}
+              >Save</Button>
+          </div>
+          )}
+        </CardFooter>
       </Card>
     );
   }

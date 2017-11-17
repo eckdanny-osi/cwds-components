@@ -36,6 +36,7 @@ const Button: React.SFC<ButtonProps> = ({
   className,
   children,
   disabled,
+  onClick= () => {}
 }) => (
   <button
     type="button"
@@ -45,6 +46,8 @@ const Button: React.SFC<ButtonProps> = ({
       `btn-${type}`,
       size && `btn-${size}`
     ])}
+    disabled={disabled}
+    onClick={() => onClick()}
   >
     {children}
   </button>

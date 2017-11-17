@@ -9,9 +9,9 @@ const propTypes = {};
 const defaultProps = {};
 
 const CardFooter: React.SFC = ({
-
+  children
 }) => (
-  <div>CardFooter</div>
+  <div className="card-footer">{children}</div>
 );
 
 CardFooter.propTypes = propTypes;

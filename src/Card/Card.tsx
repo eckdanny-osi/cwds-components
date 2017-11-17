@@ -3,12 +3,12 @@ import * as PropTypes from 'prop-types';
 import * as classNames from 'classnames';
 
 export interface CardProps {
-  tag: any; // TODO: string | Function;
-  inverse: boolean;
-  color: string;
-  body: boolean;
-  outline: boolean;
-  className: string;
+  tag?: any; // TODO: string | Function;
+  inverse?: boolean;
+  color?: string;
+  body?: boolean;
+  outline?: boolean;
+  className?: string;
 }
 
 const propTypes = {
