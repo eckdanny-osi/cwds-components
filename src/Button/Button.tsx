@@ -3,9 +3,11 @@ import * as classnames from 'classnames';
 import * as PropTypes from 'prop-types';
 
 export interface ButtonProps {
-  type: string;
+  type?: string | React.ComponentType;
   size?: string;
-  className?: string[];
+  onClick?: Function;
+  className?: string;
+  disabled?: boolean;
 }
 
 const propTypes = {
@@ -24,7 +26,8 @@ const propTypes = {
 };
 
 const defaultProps = {
-  type: 'primary'
+  type: 'primary',
+  disabled: false,
 };
 
 const Button: React.SFC<ButtonProps> = ({
@@ -32,6 +35,7 @@ const Button: React.SFC<ButtonProps> = ({
   size,
   className,
   children,
+  disabled,
 }) => (
   <button
     type="button"

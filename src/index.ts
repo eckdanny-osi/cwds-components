@@ -1,5 +1,6 @@
 export { default as Alert } from './Alert';
 export { default as Card } from './Card';
+export { default as CardEdit } from './CardEdit';
 export { default as Icon } from './Icon';
 export { default as Link } from './Link';
 export { default as Container } from './Container';
