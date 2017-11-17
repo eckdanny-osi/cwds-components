@@ -1,6 +1,5 @@
 import * as React from 'react';
-import * as classnames from 'classnames';
-import { StatelessComponent } from 'react';
+import * as classNames from 'classnames';
 import * as PropTypes from 'prop-types';
 
 export interface RowProps {
@@ -16,12 +15,12 @@ const defaultProps = {
   tag: 'div',
 };
 
-const Row: StatelessComponent<RowProps> = ({
+const Row: React.SFC<RowProps> = ({
   tag: Tag,
   className,
   ...attrs
 }) => (
-  <Tag className={classnames(['row'])} {...attrs} />
+  <Tag className={classNames(['row'])} {...attrs} />
 );
 
 Row.propTypes = propTypes;

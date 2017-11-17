@@ -1,16 +1,14 @@
 import * as React from 'react';
-import * as classnames from 'classnames';
+import * as classNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import { Children } from 'react';
 
 export interface BadgeProps {
-  // type: string;
-  color: string;
-  pill: boolean;
-  tag: any; // PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
-  // children: PropTypes.node,
-  className: string;
+  color?: string;
+  pill?: boolean;
+  tag?: string | React.ComponentType;
   href?: string;
+  className?: string;
 }
 
 const propTypes = {
@@ -19,7 +17,6 @@ const propTypes = {
   tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
   children: PropTypes.node,
   className: PropTypes.string,
-  // cssModule: PropTypes.object,
 };
 
 const defaultProps = {
@@ -35,12 +32,6 @@ const Badge: React.SFC<BadgeProps> = ({
   tag: Tag,
   ...attrs
 }) => {
-  // const classes = mapToCssModules(classNames(
-  //   className,
-  //   'badge',
-  //   'badge-' + color,
-  //   pill ? 'badge-pill' : false
-  // ), cssModule);
 
   if (attrs.href && Tag === 'span') {
     Tag = 'a';
@@ -49,7 +40,7 @@ const Badge: React.SFC<BadgeProps> = ({
   return (
     <Tag
       {...attrs}
-      className={classnames(
+      className={classNames(
         className,
         'badge',
         `badge-${color}`,
@@ -58,37 +49,6 @@ const Badge: React.SFC<BadgeProps> = ({
     />
   );
 };
-
-// const propTypes = {
-//   type: PropTypes.oneOf([
-//     'primary',
-//     'secondary',
-//     'success',
-//     'danger',
-//     'warning',
-//     'info',
-//     'light',
-//     'dark',
-//     'link',
-//   ])
-// };
-
-// const defaultProps = {
-//   type: 'secondary'
-// };
-
-// const Badge: React.SFC<BadgeProps> = ({ type, children }) => (
-//   <button
-//     type="button"
-//     className={classnames([
-//       'btn',
-//       `btn-${type}`
-//     ])}
-//   >
-//     {children}
-//   </button>
-//   // <span class="badge badge-pill badge-primary">Primary</span>
-// );
 
 Badge.propTypes = propTypes;
 Badge.defaultProps = defaultProps;

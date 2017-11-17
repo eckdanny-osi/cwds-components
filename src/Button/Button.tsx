@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as classnames from 'classnames';
+import * as classNames from 'classnames';
 import * as PropTypes from 'prop-types';
 
 export interface ButtonProps {
@@ -39,7 +39,7 @@ const Button: React.SFC<ButtonProps> = ({
 }) => (
   <button
     type="button"
-    className={classnames([
+    className={classNames([
       className,
       'btn',
       `btn-${type}`,

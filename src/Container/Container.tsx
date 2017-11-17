@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StatelessComponent } from 'react';
-import * as classnames from 'classnames';
+import * as classNames from 'classnames';
 import * as PropTypes from 'prop-types';
 
 export interface ContainerProps {
@@ -27,7 +27,7 @@ const Container: StatelessComponent<ContainerProps> = ({
 }) => (
   <Tag
     {...attrs}
-    className={classnames(
+    className={classNames(
       className,
       fluid ? 'container-fluid' : 'container'
     )}

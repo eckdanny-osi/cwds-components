@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import * as classnames from 'classnames';
+import * as classNames from 'classnames';
 
 export interface LinkProps {
   href?: string;
@@ -19,7 +19,7 @@ const defaultProps = {
 const Link: React.SFC<LinkProps> = ({ href, children, className }) => (
   <a
     href={href}
-    className={classnames('cwds-link', className)}
+    className={classNames('cwds-link', className)}
   >
     {children}
   </a>

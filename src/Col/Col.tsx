@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StatelessComponent } from 'react';
-import * as classnames from 'classnames';
+import * as classNames from 'classnames';
 import * as PropTypes from 'prop-types';
 
 // TODO: surface an API for all the options.
@@ -31,7 +31,7 @@ const Col: StatelessComponent<ColProps> = ({
   ...attrs
 }) => (
   <Tag
-    className={classnames(
+    className={classNames(
       'col',
       className
     )}

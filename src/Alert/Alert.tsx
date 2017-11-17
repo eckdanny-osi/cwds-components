@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Card from '../Card';
-import * as classnames from 'classnames';
+import * as classNames from 'classnames';
 import { ALERT_TYPE, ALERT_TYPES } from './AlertTypes';
 import * as PropTypes from 'prop-types';
 import * as Icon from 'react-fontawesome';
@@ -41,7 +41,7 @@ const Alert: React.SFC<AlertProps> = ({
   children,
 }) => (
   <div
-    className={classnames(
+    className={classNames(
       'alert',
       `alert-${type}`,
       onDismiss && 'alert-dismissible'
