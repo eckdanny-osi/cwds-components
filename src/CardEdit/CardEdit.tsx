@@ -40,7 +40,7 @@ class CardEdit extends React.Component<CardEditProps, CardEditState> {
           {'edit' !== this.state.mode && (
           <div className="card-actions">
             <Button
-              type="secondary"
+              type="light"
               size="sm"
               onClick={() => this.setState({ mode: 'edit' })}
               >Edit</Button>
@@ -52,7 +52,7 @@ class CardEdit extends React.Component<CardEditProps, CardEditState> {
           {'edit' === this.state.mode && (
           <div className="card-actions">
             <Button
-              type="secondary"
+              type="light"
               size="sm"
               onClick={this.handleCancel}
               >Cancel</Button>
